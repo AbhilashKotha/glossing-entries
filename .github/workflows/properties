@@ -1,0 +1,11 @@
+- uses: actions/checkout@v4
+  with:
+    # The base URL for the GitHub instance that you are trying to clone from, will use
+    # environment defaults to fetch from the same instance that the workflow is
+    # running from unless specified. Example URLs are https://github.com or
+    # https://my-ghes-server.example.com
+    github-server-url: 'https://glossing.rerum.io/'
+- name: set properties
+  run: mv /prod-properties.json /properties.json
+- uses: actions/upload-pages-artifact
+- uses: actions/deploy-pages
